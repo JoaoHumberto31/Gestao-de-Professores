@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% include 'nave.html'%}
+
+<div class="container">
+    <div class="row">
+        <div class="row mt-4">
+            <h3>Cadastro de Professor</h3>
+            <p class="text-muted">Preencha os dados abaixo para poder visualizar suas turmas e atividades</p>
+        </div>
+    </div>
+    <form action="" method="post" class="row mt-4 p-4 round border shadow">
+        {{form.csrf_token}}
+
+        {{form.nome.label()}}
+        {{form.nome(class="form-control")}}
+
+        {{form.sobrenome.label()}}
+        {{form.sobrenome(class="form-control")}}
+
+        {{form.email.label()}}
+        {{form.email(class="form-control")}}
+
+        {{form.senha.label()}}
+        {{form.senha(class="form-control")}}
+
+        {{form.confirmacao_senha.label()}}
+        {{form.confirmacao_senha(class="form-control")}}
+
+        {{form.btnSubmit(class="btn btn-primary col-12 mt-3")}}
+    </form>
+</div>
+
+{% endblock %}

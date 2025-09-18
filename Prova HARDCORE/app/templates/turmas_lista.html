@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% include 'nave.html'%}
+
+<div class="container my-5">
+    <div class="row">
+        <div class="col-12">
+
+            <h3 class="fw-bold mb-4">Turmas</h3>
+
+            <hr class="my-4">
+
+            <div class="table-responsive">
+                <table class="table table-striped table-hover align-middle">
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col">Numero</th>
+                            <th scope="col">Quantidade de alunos</th>
+                            <th scope="col">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for turma in context.dados %}
+                        <tr>
+                            <td>{{ turma.numero }}</td>
+                            <td>{{ turma.quantidade }}</td>
+                            <td>
+                                <a href="{{ url_for('atividades', id=turma.id) }}"
+                                    class="btn btn-sm btn-warning text-white">
+                                    Atividades
+                                </a>
+                                <form action="{{ url_for('delete_turma', id=turma.id) }}" method="post" class="d-inline">
+                                    <button type="submit" class="btn btn-sm btn-danger text-white">Excluir</button>
+                                </form>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+
+                </table>
+                <div class="justify-content-end d-flex">
+                    <a href="{{url_for('turmas_cadastro')}}" class="btn btn-primary"> Adicionar Turma</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

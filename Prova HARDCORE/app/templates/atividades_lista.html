@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% include 'nave.html'%}
+
+<div class="container my-5">
+    <div class="row">
+        <div class="col-12">
+            <h3 class="fw-bold mb-4">Atividades</h3>
+            <div class="d-flex justify-content-end mb-3">
+                <a href="{{ url_for('atividades_cadastro') }}" class="btn btn-primary">Adicionar Atividade</a>
+            </div>
+            <hr class="my-4">
+
+            <div class="table-responsive">
+                <table class="table table-striped table-hover align-middle">
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Descrição</th>
+                            <th scope="col">Data</th>
+                            <th scope="col">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for atividade in context.dados %}
+                        <tr>
+                            <td>{{ atividade.nome }}</td>
+                            <td>{{ atividade.descricao }}</td>
+                            <td>{{ atividade.data.strftime('%d/%m/%Y') }}</td>
+                            <td>
+                                <form action="{{ url_for('delete_atividade', id=atividade.id) }}" method="post" onsubmit="return confirm('Tem certeza que deseja excluir esta atividade?');">
+                                    <button type="submit" class="btn btn-sm btn-danger text-white">Excluir</button>
+                                </form>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
