@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.2 on win32)" generated="2025-11-07T12:26:17.601765" rpa="false" schemaversion="5">
+<suite id="s1" name="Teste" source="C:\Users\joao_h_mayer\Documents\GitHub\Gest-o-de-Professores\Prova HARDCORE\tests\teste.robot">
+<test id="s1-t1" name="Realizar um Login com credenciais válidas" line="13">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-11-07T12:26:17.850927" level="INFO">Opening browser 'chrome' to base url 'http://127.0.0.1:5000'.</msg>
+<arg>${URL_BASE}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-11-07T12:26:17.850602" elapsed="1.335063"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-11-07T12:26:19.190465" elapsed="0.044588"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-07T12:26:19.235787" level="INFO">Typing text 'pereira@gmail.com' into text field 'id=email'.</msg>
+<arg>id=email</arg>
+<arg>${VALID_EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-07T12:26:19.235381" elapsed="0.141299"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-07T12:26:19.377937" level="INFO">Typing text '12345' into text field 'id=senha'.</msg>
+<arg>id=senha</arg>
+<arg>${VALID_PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-07T12:26:19.377395" elapsed="0.067922"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-07T12:26:21.446401" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-07T12:26:19.445726" elapsed="2.000790"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-11-07T12:26:21.447166" level="INFO">Clicking button 'id=btnSubmit'.</msg>
+<arg>id=btnSubmit</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-07T12:26:21.446865" elapsed="0.359137"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-11-07T12:26:21.806545" elapsed="2.194988"/>
+</kw>
+<tag>Login</tag>
+<tag>Sucesso</tag>
+<tag>UI</tag>
+<status status="PASS" start="2025-11-07T12:26:17.849458" elapsed="6.152557"/>
+</test>
+<doc>Teste para verificar o Login</doc>
+<status status="PASS" start="2025-11-07T12:26:17.603240" elapsed="6.400062"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">Login</stat>
+<stat pass="1" fail="0" skip="0">Sucesso</stat>
+<stat pass="1" fail="0" skip="0">UI</stat>
+</tag>
+<suite>
+<stat name="Teste" id="s1" pass="1" fail="0" skip="0">Teste</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
